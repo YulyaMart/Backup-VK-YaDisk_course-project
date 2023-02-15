@@ -76,14 +76,9 @@ class YaUploader:
             print(f'Папка {folder_name} создана на Я.Диске.')
 
     def upload(self, data):
-        # url = "https://cloud-api.yandex.net/v1/disk/resources/upload"   
-        # headers = self.get_headers()
-        # params = {"path": file_path, "url": url}
-        # response = requests.post(url,headers=headers, params=params)
-        # status_url = response.json()['href']
         upload_report = []
         upl_files_qty = 0
-        for e in data: # обращаться здесь к списку словарей с данными по фото в качестве аргумента
+        for e in data: 
             upload_url = 'https://cloud-api.yandex.net/v1/disk/resources/upload'
             headers = self.get_headers()
             file_path = f'disk:/VK_photo/{e["file_name"]}'
